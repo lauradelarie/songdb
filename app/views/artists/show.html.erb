@@ -1,0 +1,11 @@
+<h1><%= @artist.name %></h1>
+
+<h2>Songs:</h2>
+<% @artist.songs.each do |song| %>
+<h3><%= song.title %></h3>
+<p>Album: <%= song.album %></p>
+<p>Year: <%= song.year %> </p><br>
+<% end %>
+
+
+<%= link_to "Back", root_path %>
