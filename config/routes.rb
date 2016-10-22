@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root to: 'artists#index'
 # ====SEARCH ROUTES ONLY FOR ADVANCED SEARCH OPTION====
-  resources :searches
+  # resources :searches
   resources :artists do
     collection do
       get :by_name
