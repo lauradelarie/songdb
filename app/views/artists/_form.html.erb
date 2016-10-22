@@ -1,0 +1,10 @@
+<%= form_for(@song) do |f| %>
+  <div class="field">
+    <%= f.text_field :title, placeholder: "Add a song" %>
+    <% if @song.errors.any? %>
+      <% @song.errors.full_messages.each do |message| %>
+        <small class="error"><%= message %></small>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

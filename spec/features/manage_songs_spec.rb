@@ -2,9 +2,12 @@ require 'rails_helper'
 
 feature 'Manage songs', js: true do
 
+  let!(:artist1) {create :artist}
+
   scenario 'add a new song' do
+
     # Point your browser towards the todo path
-    visit songs_path
+    visit artist_path(artist1)
 
     # Enter description in the text field
     fill_in 'song_title', with: 'Be Batman'
@@ -18,7 +21,7 @@ feature 'Manage songs', js: true do
 
   scenario 'remove a song' do
 
-    visit songs_path
+    visit artist_path(artist1)
 
     fill_in 'song_title', with: 'go to candy mountain'
     page.execute_script("$('form').submit()")
@@ -31,8 +34,9 @@ feature 'Manage songs', js: true do
   end
 
   scenario 'clean up all songs in one click' do
+    let!(:artist1) {create :artist}
 
-    visit songs_path
+    visit artist_path(artist1)
 
     fill_in 'song_title', with: 'go to candy mountain'
     page.execute_script("$('form').submit()")
