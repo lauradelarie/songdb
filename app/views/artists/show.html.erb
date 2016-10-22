@@ -12,20 +12,36 @@
    <%# end %>
    </ul>
     -->
-<p><%# link_to "Songs", artist_songs_path %></p>
+<!-- <p><%# link_to "Songs", artist_songs_path %></p>
+<%# @artist.songs.each do |song| %>
+  <span class="song-title"><%#= song.title %></span>
+<%# end %> -->
 
 
+<div class="songmanager">
+  <div class="song-input">
+    <h1 class="song-header">Songs:</h1>
 
-<h1 class="song-header">Songs:</h1>
+    <% if notice.present? %>
+      <div class="notice">
+        <%= notice %>
+      </div>
+    <% end %>
 
-<% render 'form' %>
+    <%# render 'songs/form', song: @song %>
+  </div>
 
-<% @artist.songs.each do |song| %>
-  <span class="song-title"><%= song.title %></span><a href="#" id="remove-song">Remove Song</a>
-<% end %>
-<br>
+  <hr/>
 
-<a href="#" id="clear-all">Clear all</a>
+  <div class="song-list">
+    <table class="striped-table" id="song-list-table">
+      <%#= render @songs %>
+      <a href="#" id="remove-song">Remove Song</a>
+    </table>
+  </div>
 
-
+  <div class="song-updates">
+    <a href="#" id="clear-all">Clear all</a>
+  </div>
+</div>
 <%= link_to "Back", root_path %>
