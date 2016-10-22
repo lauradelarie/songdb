@@ -16,15 +16,23 @@ selah = Artist.create(name:"Selah Sue", bio:"Selah Sue (born Sanne Greet A. Puts
 lissie = Artist.create(name:"Lissie", bio:"Elisabeth Corrin Maurus (born November 21, 1982),[3] known as Lissie, is an American singer-songwriter. She released her debut EP, \"Why You Runnin\'\", in November 2009. Her debut album, Catching a Tiger, was released in June 2010.", image: "http://res.cloudinary.com/dsiyhc1tt/image/upload/v1476521204/Lissie_live_at_Odder%C3%B8ya_Live_2013_xrqmss.jpg")
 
 
-song1 = Song.create(title:"Homeless", album:"Viktoria", year:2010, artist: maria)
-song2 = Song.create(title:"Secrets", album:"Viktoria", year:2010, artist: maria)
-song3 = Song.create(title:"Takes one to know one", album:"Viktoria", year:2010, artist: maria)
+Song.create([
+    { title: "Homeless", completed: true },
+    { title: "Secrets", completed: false },
+    { title: "Takes one to know one", completed: false }
+])
 
 
-song4 = Song.create(title:"Peace of Mind", album:"Selah Sue", year:2012, artist: selah)
-song5 = Song.create(title:"Won't go for more", album:"Reason", year:2015, artist: selah)
-song6 = Song.create(title:"Crazy Vibes", album:"Selah Sue", year:2012, artist: selah)
 
-song7 = Song.create(title:"When I'm alone", album:"Catching a tiger", year:2010, artist: lissie)
-song8 = Song.create(title:"In Sleep", album:"Catching a tiger", year:2010, artist: lissie)
-song9 = Song.create(title:"Hero", album:"My wild west", year:2016, artist: lissie)
+# song1 = Song.create(title:"Homeless", album:"Viktoria", year:2010, artist: maria)
+# song2 = Song.create(title:"Secrets", album:"Viktoria", year:2010, artist: maria)
+# song3 = Song.create(title:"Takes one to know one", album:"Viktoria", year:2010, artist: maria)
+#
+#
+# song4 = Song.create(title:"Peace of Mind", album:"Selah Sue", year:2012, artist: selah)
+# song5 = Song.create(title:"Won't go for more", album:"Reason", year:2015, artist: selah)
+# song6 = Song.create(title:"Crazy Vibes", album:"Selah Sue", year:2012, artist: selah)
+#
+# song7 = Song.create(title:"When I'm alone", album:"Catching a tiger", year:2010, artist: lissie)
+# song8 = Song.create(title:"In Sleep", album:"Catching a tiger", year:2010, artist: lissie)
+# song9 = Song.create(title:"Hero", album:"My wild west", year:2016, artist: lissie)
