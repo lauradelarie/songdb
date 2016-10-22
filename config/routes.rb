@@ -9,7 +9,9 @@ Rails.application.routes.draw do
       get :by_name
       get :created_at
     end
+
+    resources :songs, only: [:new, :create, :destroy]
+
   end
 
-  resources :songs
 end

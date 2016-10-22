@@ -1,4 +1,0 @@
-<li class="song<%= song.completed? ? " completed" : "" %>" data-id="<%= song.id %>">
-  <input name="song[<%= song.id %>]" id="song-<%= song.id %>" type="checkbox" value="1" <%= song.completed? ? 'checked="checked"' : '' %>>
-  <label for="song-<%= song.id %>"><%= song.title %></label>
-</li>

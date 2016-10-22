@@ -24,15 +24,15 @@ Song.create([
 
 
 
-# song1 = Song.create(title:"Homeless", album:"Viktoria", year:2010, artist: maria)
-# song2 = Song.create(title:"Secrets", album:"Viktoria", year:2010, artist: maria)
-# song3 = Song.create(title:"Takes one to know one", album:"Viktoria", year:2010, artist: maria)
-#
-#
-# song4 = Song.create(title:"Peace of Mind", album:"Selah Sue", year:2012, artist: selah)
-# song5 = Song.create(title:"Won't go for more", album:"Reason", year:2015, artist: selah)
-# song6 = Song.create(title:"Crazy Vibes", album:"Selah Sue", year:2012, artist: selah)
-#
-# song7 = Song.create(title:"When I'm alone", album:"Catching a tiger", year:2010, artist: lissie)
-# song8 = Song.create(title:"In Sleep", album:"Catching a tiger", year:2010, artist: lissie)
-# song9 = Song.create(title:"Hero", album:"My wild west", year:2016, artist: lissie)
+song1 = Song.create(title:"Homeless", album:"Viktoria", year:2010, artist: maria)
+song2 = Song.create(title:"Secrets", album:"Viktoria", year:2010, artist: maria)
+song3 = Song.create(title:"Takes one to know one", album:"Viktoria", year:2010, artist: maria)
+
+
+song4 = Song.create(title:"Peace of Mind", album:"Selah Sue", year:2012, artist: selah)
+song5 = Song.create(title:"Won't go for more", album:"Reason", year:2015, artist: selah)
+song6 = Song.create(title:"Crazy Vibes", album:"Selah Sue", year:2012, artist: selah)
+
+song7 = Song.create(title:"When I'm alone", album:"Catching a tiger", year:2010, artist: lissie)
+song8 = Song.create(title:"In Sleep", album:"Catching a tiger", year:2010, artist: lissie)
+song9 = Song.create(title:"Hero", album:"My wild west", year:2016, artist: lissie)

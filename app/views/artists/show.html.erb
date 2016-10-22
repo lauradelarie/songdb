@@ -1,8 +1,31 @@
-<h1><%= @artist.name %></h1>
-<img class="img" src="<%= @artist.image %>">
+<h1 class="artist-name"><%= @artist.name %></h1>
+<img class="artist-img" src="<%= @artist.image %>">
+
+<!-- <ul>
+   <%# @artists.each do |artist| %>
+   <%# @artist = artist %>
+     <li><%#=artist.name%>
+       <%# @artist.photos.each do |photo| %>
+       <%#= image_tag photo.artist_image %>
+       <%# end %>
+     </li>
+   <%# end %>
+   </ul>
+    -->
+<p><%# link_to "Songs", artist_songs_path %></p>
 
 
-<p><%# link_to "Songs", path of embedded songs resource %></p>
+
+<h1 class="song-header">Songs:</h1>
+
+<% render 'form' %>
+
+<% @artist.songs.each do |song| %>
+  <span class="song-title"><%= song.title %></span><a href="#" id="remove-song">Remove Song</a>
+<% end %>
+<br>
+
+<a href="#" id="clear-all">Clear all</a>
 
 
 <%= link_to "Back", root_path %>
