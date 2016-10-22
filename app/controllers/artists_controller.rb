@@ -13,6 +13,16 @@ class ArtistsController < ApplicationController
     @songs = Song.all
   end
 
+  def create
+    @artist = Artist.find(song_params[:artist_id])
+    @song = @artist.songs.create(song_params)
+
+      if @song.save
+        redirect_to artist_songs_path, notice: "You added a song!"
+      end
+  end
+
+
   def by_name
     @artists = Artist.by_name
     render action: :index
@@ -28,7 +38,7 @@ class ArtistsController < ApplicationController
 private
 
   def song_params
-    params.require(:song).permit(:title)
+    params.require(:song).permit(:title, :artist_id)
   end
 
 end

@@ -1,5 +1,11 @@
-<%= form_for @song, url: new_artist_song_path do |f| %>
-  <div class="field">
-    <%= f.text_field :title, placeholder: "What needs to be done?" %>
-    <% end %>
+<%= form_for [@artist, @artist.songs.new] do |f| %>
+  <div class="song-form">
+    <%= f.text_field :title, placeholder: "Add a song!", class:"form-field" %>
+    <%= f.hidden_field :artist_id, value: @artist.id %>
+    <%# if song.error.any? %>
+      <%# song.errors.full_messages.each do |message| %>
+        <!-- <span class="error-message"><%#= message %></span> -->
+      <%# end %>
+    <%# end %>
   </div>
+<% end %>

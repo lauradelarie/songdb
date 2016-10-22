@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       get :created_at
     end
 
-    resources :songs, only: [:new, :create, :destroy]
+    resources :songs
 
   end
 
