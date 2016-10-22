@@ -1,0 +1,27 @@
+<h1> search </h1>
+
+<%= form_for @search, html: { class: "pure-form" } do |s| %>
+
+  <div class="field">
+    <%= s.label :keywords %> <br>
+    <%= s.text_field :keywords %>
+  </div>
+
+  <!-- <div class="field">
+    <%# s.label :origin %> <br>
+    <%# s.select :origin, options_for_select(@origins), include_blank: true %>
+    </div> -->
+
+  <div class="field">
+   <p><%= s.label :min_year, "Between years - Earliest" %> - <%= s.text_field :min_year %></p>
+   <p><%= s.label :max_year, "Latest" %> - <%= s.text_field :max_year %> </p>
+   </div>
+
+  <div class="actions">
+    <%= s.submit "Search" %>
+  </div>
+
+
+<% end %>
+
+<p><%= link_to "Back", artists_path %></p>
