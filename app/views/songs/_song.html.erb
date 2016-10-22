@@ -1,0 +1,12 @@
+<% @artist.songs.each do |song| %>
+
+<tr class="song" data-id="<%=song.id %>">
+  <td>
+    <label for="song-<%=song.id%>"><%=song.title%></label>
+  </td>
+  <td>
+    <a href="#" id="remove-song">Remove Song</a>
+  </td>
+</tr>
+
+<% end %>
