@@ -2,10 +2,13 @@
 
 <tr class="song" data-id="<%=song.id %>">
   <td>
-    <label for="song-<%=song.id%>"><%=song.title%></label>
+    <div>
+    <button id="remove-song">X</button>
+    </div>
   </td>
+
   <td>
-    <a href="#" id="remove-song">Remove Song</a>
+    <label for="song-<%=song.id%>" id="song-title"><%=song.title%></label>
   </td>
 </tr>
 

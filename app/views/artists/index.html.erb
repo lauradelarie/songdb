@@ -1,9 +1,9 @@
 <h1>Artists</h1>
 
-<%= form_tag artists_path, :method => 'get' do %>
+<!-- <%= form_tag artists_path, :method => 'get' do %>
   <%= text_field_tag :search, params[:search] %>
   <%= submit_tag "Search" %>
-<% end %>
+<% end %> -->
 
 <!-- <p><%# link_to "Advanced search", new_search_path %> </p> <br> -->
 
@@ -11,7 +11,7 @@
 <p><%= link_to "Sort by Name A-Z", by_name_artists_path %></p>
 <p><%= link_to "Sort by Latest", created_at_artists_path %></p>
 
-
+<br>
 
 <% @artists.each do |artist| %>
   <p><%= link_to artist.name, artist_path(artist.id) %></p>
