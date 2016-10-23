@@ -1,33 +1,21 @@
-function toggleDone() {
-  $(this).parent().parent().toggleClass("success");
-}
 
-function nextSongId() {
-  return $(".song").size() + 1;
-}
-
-function createSong(title) {
-  var checkboxId = "song-" + nextSongId();
+ function createSong(title) {
 
   var label = $('<label></label>')
-    .attr('for', checkboxId)
+    .attr('for', "song-<%=song.id%>")
     .html(title);
 
-  var checkbox = $('<input type="checkbox" value="1" />')
-    .attr('id', checkboxId)
-    .bind('change', toggleDone);
-
   var tableRow = $('<tr class="song"></td>')
-    .append($('<td>').append(checkbox))
     .append($('<td>').append(label));
 
   $("#songList").append( tableRow );
 
-  var newSong = { title: title, completed: false };
+  var newSong = { title: title };
+
 
   $.ajax({
     type: "POST",
-    url: "/todos.json",
+    url: "/artists/<%artist.id%>.json",
     data: JSON.stringify({
         song: newSong
     }),
@@ -39,19 +27,27 @@ function createSong(title) {
   });
 }
 
+function removeSong(removeSong) {
+  var removeSong = document.getElementById('remove-song');
+    removeSong.onclick = function () {
+    document.getElementById('song-title').remove('song-title');
+  };
+}
+
 function submitSong(event) {
   event.preventDefault();
   createSong($("#song_title").val());
   $("#song_title").val(null);
 }
-
-function ClearAllSongs(event) {
-  event.preventDefault();
-  $.when($(".success").remove());
-}
+//
+// function ClearAllSongs(event) {
+//   event.preventDefault();
+//   $.when($(".success").remove());
+// }
 
 $(document).ready(function() {
   $("input[type=checkbox]").bind('change', toggleDone);
   $("form").bind('submit', submitSong);
+  $("song").bind('remove', removeSong);
   $("#clean-up").bind('click', ClearAllSongs);
 });
